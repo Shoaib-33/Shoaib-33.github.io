@@ -43,17 +43,17 @@
   
             <div class="col-lg-12 portfolio-info">
               <br>
-              <h2 style="color:#12d640">Image Generator</h2>
+              <h2 style="color:#12d640">Multilabel TV Series Classifier</h2>
               <ul>
-                <li><strong>Tech Stack</strong>: TJava, NodeJS, Python, HTML, CSS, Javascript, AWS(S3, EC2, SQS)</li>
-                <li><strong>Github URL</strong>: <a href="https://github.com/rajaprerak/image_recognition_as_a_service" target="_blank">Project Link</a></li>
+                <li><strong>Tech Stack</strong>: Python,NLP,MultiLabel Classification,Web Scrapping,Rendering,Huggingface.</li>
+                <li><strong>Github URL</strong>: <a href="https://github.com/Shoaib-33/Multilabel-TV-Series-Classifier" target="_blank">Project Link</a></li>
               </ul>
   
-              <p>
-                Built an elastic web application that automatically scales in and scales out 20 EC2 instances based on the traffic of current users with the help of AWS services. Created custom AMIs to deploy image recognition app on EC2 instance; used SQS to handle request and response.              </p>
+              <p>This project is all about text classification which classifies genres of TV series based on the short description of the plot. It can classify upto 28 different genres of TV Series and can predict genres based on a short description of the TV series plot.Srapping TV series data was done from IMDb website using Selenium, collecting almost 25000 descriptions having 28 genres.Fine-tuned a pre-trained DistilRoberta-Base model using HuggingFace Transformers alongside Fastai and Blurr. Through rigorous training,Obtained remarkable results, achieving an outstanding accuracy of 99.885% and an impressive F1 score (micro) of 99.98%.Optimized the model for deployment,then converted it to the ONNX format and further compressed it using ONNX quantized format.
+                             </p>
               </p>
               <p>
-                Deployed image recognition system on AWS for the clients to access and successfully tested the application by generating 1000 requests.              </p>
+                Deployed the compressed model on HuggingFace Spaces using a Gradio App.</p>
               </p>
             </div>
   
