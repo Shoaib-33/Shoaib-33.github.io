@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shoaib Shahriar | AI/ML Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --card: #16161f;
+    --border: #22222e;
+    --accent: #00e5a0;
+    --accent2: #7b5ea7;
+    --text: #e8e8f0;
+    --muted: #6b6b80;
+    --glow: rgba(0, 229, 160, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Animated background grid */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,229,160,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,160,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Floating orbs */
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    animation: float 8s ease-in-out infinite;
+  }
+  .orb1 { width: 400px; height: 400px; background: rgba(0,229,160,0.06); top: -100px; right: -100px; animation-delay: 0s; }
+  .orb2 { width: 300px; height: 300px; background: rgba(123,94,167,0.07); bottom: 100px; left: -80px; animation-delay: 3s; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* SECTIONS */
+  section { position: relative; z-index: 1; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero-content { max-width: 780px; }
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(0,229,160,0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  h1 .accent { color: var(--accent); }
+  h1 .dim { color: var(--muted); }
+  .hero-bio {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #000;
+    font-weight: 500;
+  }
+  .btn-primary:hover { background: #00ffb3; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,229,160,0.3); }
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* CONTAINER */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 4rem;
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .section-num {
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* EXPERIENCE */
+  #experience { background: var(--surface); }
+  .exp-grid { display: grid; gap: 1.5rem; }
+  .exp-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .exp-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    border-radius: 3px 0 0 3px;
+  }
+  .exp-card:hover { border-color: rgba(0,229,160,0.3); transform: translateX(4px); }
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem; }
+  .exp-role { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; }
+  .exp-company { color: var(--accent); font-size: 0.85rem; margin-bottom: 0.3rem; }
+  .exp-date { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; }
+  .exp-bullets { list-style: none; margin-top: 1rem; display: grid; gap: 0.5rem; }
+  .exp-bullets li {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem; }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.8rem;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .project-card:hover {
+    border-color: rgba(0,229,160,0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,229,160,0.08);
+  }
+  .project-year { font-size: 0.68rem; color: var(--accent); letter-spacing: 0.12em; }
+  .project-name { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; }
+  .project-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; flex: 1; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+  .tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  /* SKILLS */
+  #skills { background: var(--surface); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+  .skill-group {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .skill-group-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-pill {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.8rem;
+    background: rgba(0,229,160,0.06);
+    border: 1px solid rgba(0,229,160,0.15);
+    color: var(--text);
+    border-radius: 6px;
+  }
+
+  /* EDUCATION */
+  .edu-grid { display: grid; gap: 1rem; }
+  .edu-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    transition: border-color 0.2s;
+  }
+  .edu-card:hover { border-color: rgba(0,229,160,0.3); }
+  .edu-degree { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .edu-school { font-size: 0.82rem; color: var(--accent); }
+  .edu-right { text-align: right; }
+  .edu-year { font-size: 0.75rem; color: var(--muted); }
+  .edu-gpa { font-size: 0.85rem; color: var(--text); margin-top: 0.2rem; }
+
+  /* CONTACT */
+  #contact { background: var(--surface); }
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .contact-text h2 { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; }
+  .contact-text p { color: var(--muted); font-size: 0.85rem; line-height: 1.7; }
+  .contact-links { display: grid; gap: 1rem; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s;
+    font-size: 0.82rem;
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateX(4px); }
+  .contact-icon { font-size: 1.1rem; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    border-top: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #hero, .container { padding: 6rem 1.5rem 3rem; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .edu-card { flex-direction: column; }
+    .edu-right { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">SHOAIB.DEV</div>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="position:relative;z-index:1">
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Available for opportunities</div>
+    <h1>
+      Md Shoaib<br>
+      <span class="accent">Shahriar</span><br>
+      <span class="dim">Ibrahim</span>
+    </h1>
+    <p class="hero-bio">
+      AI/ML Engineer specializing in LLMs, RAG systems, and multi-agent architectures. 
+      Currently building production AI at Openrefactory Inc. — turning complex problems 
+      into intelligent, automated solutions.
+    </p>
+    <div class="hero-links">
+      <a href="mailto:shoaib.shahriar01@gmail.com" class="btn btn-primary">✉ Get in Touch</a>
+      <a href="https://github.com/Shoaib-33" target="_blank" class="btn btn-outline">⌥ GitHub</a>
+      <a href="https://shorturl.at/NlssG" target="_blank" class="btn btn-outline">↗ LinkedIn</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Software Engineer (ML)</div>
+            <div class="exp-company">Openrefactory, Inc — USA</div>
+          </div>
+          <div class="exp-date">Dec 2024 – Present</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Built microservice for automated root-cause analysis of software vulnerabilities (CVEs) using LLMs, multi-agent systems, and prompt engineering.</li>
+          <li>Designed and implemented data pipelines to retrieve and process commit metadata via REST APIs and web scraping.</li>
+          <li>Developed the Builder Project — a multi-agent AI system that interprets GitHub READMEs and generates optimized Dockerfiles using LLM orchestration.</li>
+        </ul>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Data Science Trainee</div>
+            <div class="exp-company">Mastercourse IT</div>
+          </div>
+          <div class="exp-date">Apr 2023 – Dec 2023</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Completed intensive internship in Data Analytics, NLP, Machine Learning, and Deep Learning.</li>
+          <li>Delivered industry-standard results across four end-to-end projects.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-year">2025</div>
+        <div class="project-name">Automated HR Management System</div>
+        <p class="project-desc">Automated HR Management System using MCP to streamline LLM-driven interactions with organizational tools.</p>
+        <div class="project-tags">
+          <span class="tag">MCP</span><span class="tag">LLM</span><span class="tag">Automation</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-year">2025</div>
+        <div class="project-name">Finbot — Role-Based RAG Chatbot</div>
+        <p class="project-desc">Secure, role-based enterprise chatbot using LLMs and hybrid retrieval to ensure department-specific access and prevent data leaks.</p>
+        <div class="project-tags">
+          <span class="tag">RAG</span><span class="tag">LLM</span><span class="tag">Security</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-year">2025</div>
+        <div class="project-name">Bangla History Chatbot</div>
+        <p class="project-desc">RAG-based chatbot to retrieve and present authentic accounts of Bangladeshi history with accurate sourcing.</p>
+        <div class="project-tags">
+          <span class="tag">RAG</span><span class="tag">NLP</span><span class="tag">LangChain</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-year">2025</div>
+        <div class="project-name">E-Commerce Support Automation</div>
+        <p class="project-desc">Automated customer support system for an e-commerce Facebook page using n8n workflow automation.</p>
+        <div class="project-tags">
+          <span class="tag">n8n</span><span class="tag">Automation</span><span class="tag">LLM</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-year">2023</div>
+        <div class="project-name">Fighter Jet Recognizer</div>
+        <p class="project-desc">Computer vision-based fighter jet image recognizer with a fine-tuned model for accurate classification of 26 jet types.</p>
+        <div class="project-tags">
+          <span class="tag">CV</span><span class="tag">PyTorch</span><span class="tag">Fine-tuning</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-year">2023</div>
+        <div class="project-name">Dhaka House Rent Analysis</div>
+        <p class="project-desc">Data analytics project cross-comparing house rent across various areas of Dhaka city with visual insights.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span><span class="tag">Tableau</span><span class="tag">Pandas</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-year">2022</div>
+        <div class="project-name">Disease Prediction from Symptoms</div>
+        <p class="project-desc">ML-based system predicting diseases from symptoms, enabling early detection and preventive care.</p>
+        <div class="project-tags">
+          <span class="tag">Scikit-learn</span><span class="tag">ML</span><span class="tag">Healthcare</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-year">2021</div>
+        <div class="project-name">ISMS — IUT Student Management</div>
+        <p class="project-desc">Student management system with Django backend and MySQL, featuring full management for students, teachers, and staff.</p>
+        <div class="project-tags">
+          <span class="tag">Django</span><span class="tag">MySQL</span><span class="tag">Python</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Skills</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Languages</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">C++</span>
+          <span class="skill-pill">Java</span>
+          <span class="skill-pill">C</span>
+          <span class="skill-pill">Assembly</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">ML / Deep Learning</div>
+        <div class="skill-pills">
+          <span class="skill-pill">PyTorch</span>
+          <span class="skill-pill">TensorFlow</span>
+          <span class="skill-pill">Keras</span>
+          <span class="skill-pill">Scikit-learn</span>
+          <span class="skill-pill">NumPy</span>
+          <span class="skill-pill">Pandas</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">LLM & AI</div>
+        <div class="skill-pills">
+          <span class="skill-pill">LangChain</span>
+          <span class="skill-pill">LangGraph</span>
+          <span class="skill-pill">RAG</span>
+          <span class="skill-pill">Multi-Agent</span>
+          <span class="skill-pill">Prompt Eng.</span>
+          <span class="skill-pill">MCP</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Database</div>
+        <div class="skill-pills">
+          <span class="skill-pill">MySQL</span>
+          <span class="skill-pill">PostgreSQL</span>
+          <span class="skill-pill">Oracle</span>
+          <span class="skill-pill">PL/SQL</span>
+          <span class="skill-pill">Qdrant</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Web Scraping</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Selenium</span>
+          <span class="skill-pill">BeautifulSoup</span>
+          <span class="skill-pill">REST APIs</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Tools & Platforms</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Git</span>
+          <span class="skill-pill">Linux</span>
+          <span class="skill-pill">Docker</span>
+          <span class="skill-pill">Figma</span>
+          <span class="skill-pill">Tableau</span>
+          <span class="skill-pill">n8n</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Education</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div>
+          <div class="edu-degree">B.Sc. in Computer Science & Engineering</div>
+          <div class="edu-school">Islamic University of Technology — Gazipur, Bangladesh</div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-year">2020 – 2024</div>
+          <div class="edu-gpa">CGPA: 3.48</div>
+        </div>
+      </div>
+      <div class="edu-card reveal">
+        <div>
+          <div class="edu-degree">Higher Secondary Certificate (HSC)</div>
+          <div class="edu-school">The Millennium Stars School and College — Rangpur</div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-year">2019</div>
+          <div class="edu-gpa">GPA: 5.00</div>
+        </div>
+      </div>
+      <div class="edu-card reveal">
+        <div>
+          <div class="edu-degree">Secondary School Certificate (SSC)</div>
+          <div class="edu-school">The Millennium Stars School and College — Rangpur</div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-year">2017</div>
+          <div class="edu-gpa">GPA: 5.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-text reveal">
+        <h2>Let's Build<br><span style="color:var(--accent)">Something</span><br>Together.</h2>
+        <p style="margin-top:1rem">Open to AI engineering roles, collaborations, and interesting problems. Drop a message anytime.</p>
+      </div>
+      <div class="contact-links reveal">
+        <a href="mailto:shoaib.shahriar01@gmail.com" class="contact-link">
+          <span class="contact-icon">✉</span>
+          <span>shoaib.shahriar01@gmail.com</span>
+        </a>
+        <a href="https://github.com/Shoaib-33" target="_blank" class="contact-link">
+          <span class="contact-icon">⌥</span>
+          <span>github.com/Shoaib-33</span>
+        </a>
+        <a href="https://shorturl.at/NlssG" target="_blank" class="contact-link">
+          <span class="contact-icon">↗</span>
+          <span>LinkedIn Profile</span>
+        </a>
+        <a href="tel:+8801309183295" class="contact-link">
+          <span class="contact-icon">✆</span>
+          <span>+880 1309 183295</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Designed & Built by Md Shoaib Shahriar Ibrahim · 2025</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
