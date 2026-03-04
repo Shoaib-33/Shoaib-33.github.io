@@ -30,7 +30,6 @@
     overflow-x: hidden;
   }
 
-  /* Animated background grid */
   body::before {
     content: '';
     position: fixed;
@@ -43,7 +42,6 @@
     z-index: 0;
   }
 
-  /* Floating orbs */
   .orb {
     position: fixed;
     border-radius: 50%;
@@ -59,7 +57,6 @@
     50% { transform: translateY(-30px); }
   }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -90,10 +87,8 @@
   }
   .nav-links a:hover { color: var(--accent); }
 
-  /* SECTIONS */
   section { position: relative; z-index: 1; }
 
-  /* HERO */
   #hero {
     min-height: 100vh;
     display: flex;
@@ -167,17 +162,9 @@
     cursor: pointer;
     border: none;
   }
-  .btn-primary {
-    background: var(--accent);
-    color: #000;
-    font-weight: 500;
-  }
+  .btn-primary { background: var(--accent); color: #000; font-weight: 500; }
   .btn-primary:hover { background: #00ffb3; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,229,160,0.3); }
-  .btn-outline {
-    background: transparent;
-    color: var(--text);
-    border: 1px solid var(--border);
-  }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
   .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
   @keyframes fadeUp {
@@ -185,38 +172,13 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* CONTAINER */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 5rem 4rem;
-  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 5rem 4rem; }
 
-  /* SECTION HEADER */
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-  }
-  .section-num {
-    font-size: 0.7rem;
-    color: var(--accent);
-    letter-spacing: 0.15em;
-  }
-  .section-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-  }
-  .section-line {
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+  .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
+  .section-num { font-size: 0.7rem; color: var(--accent); letter-spacing: 0.15em; }
+  .section-title { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 700; letter-spacing: -0.01em; }
+  .section-line { flex: 1; height: 1px; background: var(--border); }
 
-  /* EXPERIENCE */
   #experience { background: var(--surface); }
   .exp-grid { display: grid; gap: 1.5rem; }
   .exp-card {
@@ -251,7 +213,6 @@
   }
   .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem; }
 
-  /* PROJECTS */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -285,22 +246,46 @@
     color: var(--muted);
   }
 
-  /* SKILLS */
+  .project-links { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.4rem; }
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.67rem;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.7rem;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1px solid rgba(0,229,160,0.25);
+    color: var(--accent);
+    background: rgba(0,229,160,0.05);
+    transition: all 0.2s;
+  }
+  .project-link:hover {
+    background: rgba(0,229,160,0.12);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .project-link-placeholder {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.67rem;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.7rem;
+    border-radius: 6px;
+    border: 1px dashed var(--border);
+    color: var(--muted);
+    background: transparent;
+    opacity: 0.5;
+    cursor: default;
+    user-select: none;
+  }
+
   #skills { background: var(--surface); }
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
-  .skill-group {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-  }
-  .skill-group-title {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-  }
+  .skill-group { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+  .skill-group-title { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
   .skill-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .skill-pill {
     font-size: 0.75rem;
@@ -311,7 +296,6 @@
     border-radius: 6px;
   }
 
-  /* EDUCATION */
   .edu-grid { display: grid; gap: 1rem; }
   .edu-card {
     background: var(--card);
@@ -332,14 +316,8 @@
   .edu-year { font-size: 0.75rem; color: var(--muted); }
   .edu-gpa { font-size: 0.85rem; color: var(--text); margin-top: 0.2rem; }
 
-  /* CONTACT */
   #contact { background: var(--surface); }
-  .contact-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
   .contact-text h2 { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; }
   .contact-text p { color: var(--muted); font-size: 0.85rem; line-height: 1.7; }
   .contact-links { display: grid; gap: 1rem; }
@@ -359,7 +337,6 @@
   .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateX(4px); }
   .contact-icon { font-size: 1.1rem; }
 
-  /* FOOTER */
   footer {
     text-align: center;
     padding: 2rem;
@@ -371,7 +348,6 @@
     z-index: 1;
   }
 
-  /* SCROLL REVEAL */
   .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -480,6 +456,7 @@
     </div>
     <div class="projects-grid">
 
+      <!-- Automated HR Management System -->
       <div class="project-card reveal">
         <div class="project-year">2025</div>
         <div class="project-name">Automated HR Management System</div>
@@ -487,17 +464,42 @@
         <div class="project-tags">
           <span class="tag">MCP</span><span class="tag">LLM</span><span class="tag">Automation</span>
         </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-year">2025</div>
-        <div class="project-name">Finbot — Role-Based RAG Chatbot</div>
-        <p class="project-desc">Secure, role-based enterprise chatbot using LLMs and hybrid retrieval to ensure department-specific access and prevent data leaks.</p>
-        <div class="project-tags">
-          <span class="tag">RAG</span><span class="tag">LLM</span><span class="tag">Security</span>
+        <div class="project-links">
+          <a href="https://github.com/Shoaib-33/Automated-HR-Management-System?tab=readme-ov-file" target="_blank" class="project-link">⌥ GitHub</a>
+          <a href="https://www.youtube.com/watch?v=noxaUF9vBgU" target="_blank" class="project-link">▶ Demo</a>
         </div>
       </div>
 
+      <!-- Finsolve -->
+      <div class="project-card reveal">
+        <div class="project-year">2025</div>
+        <div class="project-name">Finsolve — Role-Based RAG Chatbot</div>
+        <p class="project-desc">Secure, role-based enterprise chatbot using LLMs and hybrid retrieval to ensure department-specific access and prevent data leaks.</p>
+        <div class="project-tags">
+          <span class="tag">RAG</span><span class="tag">LLM</span><span class="tag">FastAPI</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Shoaib-33/Finsolve-" target="_blank" class="project-link">⌥ GitHub</a>
+          <a href="https://youtu.be/mcl03F1ANpo" target="_blank" class="project-link">▶ Demo</a>
+        </div>
+      </div>
+
+      <!-- BusGo -->
+      <div class="project-card reveal">
+        <div class="project-year">2025</div>
+        <div class="project-name">BusGo — AI Bus Ticket Booking</div>
+        <p class="project-desc">AI-powered bus ticket booking app with a natural language assistant for searching routes, booking tickets, and querying fares and policies. RAG pipeline using LangChain, ChromaDB, and Google Gemini, deployed via Docker with FastAPI and SQLite.</p>
+        <div class="project-tags">
+          <span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">Gemini</span><span class="tag">FastAPI</span><span class="tag">Docker</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Shoaib-33/BusGo" target="_blank" class="project-link">⌥ GitHub</a>
+          <a href="https://www.loom.com/share/986076c39f7d46b396593969bbc1cc46" target="_blank" class="project-link">▶ Demo</a>
+          <a href="https://huggingface.co/spaces/Shoaib-33/Bus-ticket-booking-application" target="_blank" class="project-link">🤗 HuggingFace</a>
+        </div>
+      </div>
+
+      <!-- Bangla History Chatbot -->
       <div class="project-card reveal">
         <div class="project-year">2025</div>
         <div class="project-name">Bangla History Chatbot</div>
@@ -505,8 +507,13 @@
         <div class="project-tags">
           <span class="tag">RAG</span><span class="tag">NLP</span><span class="tag">LangChain</span>
         </div>
+        <div class="project-links">
+          <a href="https://github.com/Shoaib-33/Bangla-History-Chatbot" target="_blank" class="project-link">⌥ GitHub</a>
+          <span class="project-link-placeholder">▶ Demo — coming soon</span>
+        </div>
       </div>
 
+      <!-- E-Commerce Support Automation -->
       <div class="project-card reveal">
         <div class="project-year">2025</div>
         <div class="project-name">E-Commerce Support Automation</div>
@@ -514,8 +521,13 @@
         <div class="project-tags">
           <span class="tag">n8n</span><span class="tag">Automation</span><span class="tag">LLM</span>
         </div>
+        <div class="project-links">
+          <a href="https://github.com/Shoaib-33/E-Commerce-Customer-Support-Automation" target="_blank" class="project-link">⌥ GitHub</a>
+          <span class="project-link-placeholder">▶ Demo — coming soon</span>
+        </div>
       </div>
 
+      <!-- Fighter Jet Recognizer -->
       <div class="project-card reveal">
         <div class="project-year">2023</div>
         <div class="project-name">Fighter Jet Recognizer</div>
@@ -523,8 +535,13 @@
         <div class="project-tags">
           <span class="tag">CV</span><span class="tag">PyTorch</span><span class="tag">Fine-tuning</span>
         </div>
+        <div class="project-links">
+          <a href="https://github.com/Shoaib-33/Fighter-Jet-Recognizer" target="_blank" class="project-link">⌥ GitHub</a>
+          <span class="project-link-placeholder">▶ Demo — coming soon</span>
+        </div>
       </div>
 
+      <!-- Dhaka House Rent Analysis -->
       <div class="project-card reveal">
         <div class="project-year">2023</div>
         <div class="project-name">Dhaka House Rent Analysis</div>
@@ -532,23 +549,24 @@
         <div class="project-tags">
           <span class="tag">Python</span><span class="tag">Tableau</span><span class="tag">Pandas</span>
         </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-year">2022</div>
-        <div class="project-name">Disease Prediction from Symptoms</div>
-        <p class="project-desc">ML-based system predicting diseases from symptoms, enabling early detection and preventive care.</p>
-        <div class="project-tags">
-          <span class="tag">Scikit-learn</span><span class="tag">ML</span><span class="tag">Healthcare</span>
+        <div class="project-links">
+          <a href="https://github.com/Shoaib-33/Dhaka-City-Rent-Analysis" target="_blank" class="project-link">⌥ GitHub</a>
+          <span class="project-link-placeholder">▶ Demo — coming soon</span>
         </div>
       </div>
 
+
+      <!-- ISMS -->
       <div class="project-card reveal">
         <div class="project-year">2021</div>
         <div class="project-name">ISMS — IUT Student Management</div>
         <p class="project-desc">Student management system with Django backend and MySQL, featuring full management for students, teachers, and staff.</p>
         <div class="project-tags">
           <span class="tag">Django</span><span class="tag">MySQL</span><span class="tag">Python</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Shoaib-33/ISMS_" target="_blank" class="project-link">⌥ GitHub</a>
+          <span class="project-link-placeholder">▶ Demo — coming soon</span>
         </div>
       </div>
 
@@ -708,12 +726,9 @@
 </footer>
 
 <script>
-  // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-      }
+      if (e.isIntersecting) e.target.classList.add('visible');
     });
   }, { threshold: 0.1 });
 
