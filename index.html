@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shoaib Shahriar | AI/ML Engineer</title>
+<title>Shoaib Shahriar | AI Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -50,8 +50,25 @@
     z-index: 0;
     animation: float 8s ease-in-out infinite;
   }
-  .orb1 { width: 400px; height: 400px; background: rgba(0,229,160,0.06); top: -100px; right: -100px; animation-delay: 0s; }
-  .orb2 { width: 300px; height: 300px; background: rgba(123,94,167,0.07); bottom: 100px; left: -80px; animation-delay: 3s; }
+
+  .orb1 {
+    width: 400px;
+    height: 400px;
+    background: rgba(0,229,160,0.06);
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+  }
+
+  .orb2 {
+    width: 300px;
+    height: 300px;
+    background: rgba(123,94,167,0.07);
+    bottom: 100px;
+    left: -80px;
+    animation-delay: 3s;
+  }
+
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-30px); }
@@ -69,6 +86,7 @@
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
   }
+
   .nav-logo {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
@@ -76,7 +94,13 @@
     color: var(--accent);
     letter-spacing: 0.05em;
   }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
   .nav-links a {
     text-decoration: none;
     color: var(--muted);
@@ -85,6 +109,7 @@
     text-transform: uppercase;
     transition: color 0.2s;
   }
+
   .nav-links a:hover { color: var(--accent); }
 
   section { position: relative; z-index: 1; }
@@ -97,7 +122,9 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-  .hero-content { max-width: 780px; }
+
+  .hero-content { max-width: 840px; }
+
   .hero-tag {
     display: inline-flex;
     align-items: center;
@@ -112,17 +139,21 @@
     margin-bottom: 2rem;
     animation: fadeUp 0.6s ease both;
   }
+
   .hero-tag::before {
     content: '';
-    width: 6px; height: 6px;
+    width: 6px;
+    height: 6px;
     background: var(--accent);
     border-radius: 50%;
     animation: pulse 2s infinite;
   }
+
   @keyframes pulse {
     0%,100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.4; transform: scale(0.8); }
   }
+
   h1 {
     font-family: 'Syne', sans-serif;
     font-size: clamp(3rem, 7vw, 5.5rem);
@@ -132,22 +163,26 @@
     margin-bottom: 1.5rem;
     animation: fadeUp 0.6s 0.1s ease both;
   }
+
   h1 .accent { color: var(--accent); }
   h1 .dim { color: var(--muted); }
+
   .hero-bio {
     font-size: 0.95rem;
     line-height: 1.8;
     color: var(--muted);
-    max-width: 580px;
+    max-width: 700px;
     margin-bottom: 2.5rem;
     animation: fadeUp 0.6s 0.2s ease both;
   }
+
   .hero-links {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     animation: fadeUp 0.6s 0.3s ease both;
   }
+
   .btn {
     display: inline-flex;
     align-items: center;
@@ -162,25 +197,72 @@
     cursor: pointer;
     border: none;
   }
-  .btn-primary { background: var(--accent); color: #000; font-weight: 500; }
-  .btn-primary:hover { background: #00ffb3; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,229,160,0.3); }
-  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
-  .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #000;
+    font-weight: 500;
+  }
+
+  .btn-primary:hover {
+    background: #00ffb3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,229,160,0.3);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .container { max-width: 1200px; margin: 0 auto; padding: 5rem 4rem; }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 4rem;
+  }
 
-  .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
-  .section-num { font-size: 0.7rem; color: var(--accent); letter-spacing: 0.15em; }
-  .section-title { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 700; letter-spacing: -0.01em; }
-  .section-line { flex: 1; height: 1px; background: var(--border); }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .section-num {
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
 
   #experience { background: var(--surface); }
+
   .exp-grid { display: grid; gap: 1.5rem; }
+
   .exp-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -190,6 +272,7 @@
     position: relative;
     overflow: hidden;
   }
+
   .exp-card::before {
     content: '';
     position: absolute;
@@ -198,12 +281,46 @@
     background: var(--accent);
     border-radius: 3px 0 0 3px;
   }
-  .exp-card:hover { border-color: rgba(0,229,160,0.3); transform: translateX(4px); }
-  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem; }
-  .exp-role { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; }
-  .exp-company { color: var(--accent); font-size: 0.85rem; margin-bottom: 0.3rem; }
-  .exp-date { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; }
-  .exp-bullets { list-style: none; margin-top: 1rem; display: grid; gap: 0.5rem; }
+
+  .exp-card:hover {
+    border-color: rgba(0,229,160,0.3);
+    transform: translateX(4px);
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .exp-role {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .exp-company {
+    color: var(--accent);
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .exp-date {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+
   .exp-bullets li {
     font-size: 0.82rem;
     color: var(--muted);
@@ -211,13 +328,21 @@
     padding-left: 1.2rem;
     position: relative;
   }
-  .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem; }
+
+  .exp-bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+  }
 
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
   }
+
   .project-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -228,15 +353,39 @@
     flex-direction: column;
     gap: 0.8rem;
   }
+
   .project-card:hover {
     border-color: rgba(0,229,160,0.4);
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(0,229,160,0.08);
   }
-  .project-year { font-size: 0.68rem; color: var(--accent); letter-spacing: 0.12em; }
-  .project-name { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; }
-  .project-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; flex: 1; }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+
+  .project-year {
+    font-size: 0.68rem;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+  }
+
+  .project-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .project-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+
   .tag {
     font-size: 0.65rem;
     letter-spacing: 0.08em;
@@ -246,7 +395,13 @@
     color: var(--muted);
   }
 
-  .project-links { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.4rem; }
+  .project-links {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 0.4rem;
+  }
+
   .project-link {
     display: inline-flex;
     align-items: center;
@@ -261,32 +416,42 @@
     background: rgba(0,229,160,0.05);
     transition: all 0.2s;
   }
+
   .project-link:hover {
     background: rgba(0,229,160,0.12);
     border-color: var(--accent);
     transform: translateY(-1px);
   }
-  .project-link-placeholder {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.67rem;
-    letter-spacing: 0.08em;
-    padding: 0.25rem 0.7rem;
-    border-radius: 6px;
-    border: 1px dashed var(--border);
-    color: var(--muted);
-    background: transparent;
-    opacity: 0.5;
-    cursor: default;
-    user-select: none;
-  }
 
   #skills { background: var(--surface); }
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
-  .skill-group { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
-  .skill-group-title { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
-  .skill-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-group {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .skill-group-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
   .skill-pill {
     font-size: 0.75rem;
     padding: 0.35rem 0.8rem;
@@ -297,6 +462,7 @@
   }
 
   .edu-grid { display: grid; gap: 1rem; }
+
   .edu-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -309,18 +475,59 @@
     gap: 1rem;
     transition: border-color 0.2s;
   }
+
   .edu-card:hover { border-color: rgba(0,229,160,0.3); }
-  .edu-degree { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
-  .edu-school { font-size: 0.82rem; color: var(--accent); }
+
+  .edu-degree {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-school {
+    font-size: 0.82rem;
+    color: var(--accent);
+  }
+
   .edu-right { text-align: right; }
-  .edu-year { font-size: 0.75rem; color: var(--muted); }
-  .edu-gpa { font-size: 0.85rem; color: var(--text); margin-top: 0.2rem; }
+
+  .edu-year {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .edu-gpa {
+    font-size: 0.85rem;
+    color: var(--text);
+    margin-top: 0.2rem;
+  }
 
   #contact { background: var(--surface); }
-  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-  .contact-text h2 { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; }
-  .contact-text p { color: var(--muted); font-size: 0.85rem; line-height: 1.7; }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .contact-text h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .contact-text p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
   .contact-links { display: grid; gap: 1rem; }
+
   .contact-link {
     display: flex;
     align-items: center;
@@ -334,7 +541,13 @@
     transition: all 0.2s;
     font-size: 0.82rem;
   }
-  .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateX(4px); }
+
+  .contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+
   .contact-icon { font-size: 1.1rem; }
 
   footer {
@@ -353,7 +566,11 @@
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
@@ -370,7 +587,6 @@
 <div class="orb orb1"></div>
 <div class="orb orb2"></div>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">SHOAIB.DEV</div>
   <ul class="nav-links">
@@ -382,7 +598,6 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div style="position:relative;z-index:1">
 <section id="hero">
   <div class="hero-content">
@@ -393,20 +608,20 @@
       <span class="dim">Ibrahim</span>
     </h1>
     <p class="hero-bio">
-      AI/ML Engineer specializing in LLMs, RAG systems, and multi-agent architectures. 
-      Currently building production AI at Openrefactory Inc. — turning complex problems 
-      into intelligent, automated solutions.
+      AI Engineer with hands-on experience in LLM-based systems, RAG pipelines, and multi-agent architectures.
+      Worked on intelligent applications including enterprise chatbots, automated vulnerability analysis, and
+      deep learning-based medical imaging systems. Skilled in Deep Learning, Transformers, and model optimization,
+      with experience building backend APIs using FastAPI.
     </p>
     <div class="hero-links">
       <a href="mailto:shoaib.shahriar01@gmail.com" class="btn btn-primary">✉ Get in Touch</a>
       <a href="https://github.com/Shoaib-33" target="_blank" class="btn btn-outline">⌥ GitHub</a>
-      <a href="https://shorturl.at/NlssG" target="_blank" class="btn btn-outline">↗ LinkedIn</a>
+      <a href="https://shorturl.at/NIssG" target="_blank" class="btn btn-outline">↗ LinkedIn</a>
     </div>
   </div>
 </section>
 </div>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
     <div class="section-header reveal">
@@ -414,21 +629,23 @@
       <h2 class="section-title">Experience</h2>
       <div class="section-line"></div>
     </div>
+
     <div class="exp-grid">
       <div class="exp-card reveal">
         <div class="exp-header">
           <div>
             <div class="exp-role">Software Engineer (ML)</div>
-            <div class="exp-company">Openrefactory, Inc — USA</div>
+            <div class="exp-company">OpenRefactory, Inc. — USA</div>
           </div>
           <div class="exp-date">Dec 2024 – Present</div>
         </div>
         <ul class="exp-bullets">
-          <li>Built microservice for automated root-cause analysis of software vulnerabilities (CVEs) using LLMs, multi-agent systems, and prompt engineering.</li>
+          <li>Contributed to a microservice for automated root-cause analysis of software vulnerabilities (CVEs) using LLMs, multi-agent systems, and prompt engineering, improving the accuracy and relevance of code-level insights.</li>
           <li>Designed and implemented data pipelines to retrieve and process commit metadata via REST APIs and web scraping.</li>
-          <li>Developed the Builder Project — a multi-agent AI system that interprets GitHub READMEs and generates optimized Dockerfiles using LLM orchestration.</li>
+          <li>Developed the Builder Project, a multi-agent AI system that interprets GitHub READMEs and generates optimized Dockerfiles using LLM orchestration for build requirement extraction.</li>
         </ul>
       </div>
+
       <div class="exp-card reveal">
         <div class="exp-header">
           <div>
@@ -438,7 +655,7 @@
           <div class="exp-date">Apr 2023 – Dec 2023</div>
         </div>
         <ul class="exp-bullets">
-          <li>Completed intensive internship in Data Analytics, NLP, Machine Learning, and Deep Learning.</li>
+          <li>Completed an intensive internship in Data Analytics, NLP, Machine Learning, and Deep Learning.</li>
           <li>Delivered industry-standard results across four end-to-end projects.</li>
         </ul>
       </div>
@@ -446,7 +663,6 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <div class="section-header reveal">
@@ -454,29 +670,23 @@
       <h2 class="section-title">Projects</h2>
       <div class="section-line"></div>
     </div>
+
     <div class="projects-grid">
 
-      <!-- Automated HR Management System -->
       <div class="project-card reveal">
         <div class="project-year">2025</div>
-        <div class="project-name">Automated HR Management System</div>
-        <p class="project-desc">Automated HR Management System using MCP to streamline LLM-driven interactions with organizational tools.</p>
+        <div class="project-name">FinSolve — Role-Based RAG Chatbot</div>
+        <p class="project-desc">
+          Role-based RAG chatbot for enterprise knowledge retrieval, enabling employees to query internal documents
+          and HR data through natural language with department-scoped access control. Includes hybrid BM25 + semantic
+          retrieval, cross-encoder reranking, LLM-based query routing, PII guardrails, and hallucination detection.
+        </p>
         <div class="project-tags">
-          <span class="tag">MCP</span><span class="tag">LLM</span><span class="tag">Automation</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Shoaib-33/Automated-HR-Management-System?tab=readme-ov-file" target="_blank" class="project-link">⌥ GitHub</a>
-          <a href="https://www.youtube.com/watch?v=noxaUF9vBgU" target="_blank" class="project-link">▶ Demo</a>
-        </div>
-      </div>
-
-      <!-- Finsolve -->
-      <div class="project-card reveal">
-        <div class="project-year">2025</div>
-        <div class="project-name">Finsolve — Role-Based RAG Chatbot</div>
-        <p class="project-desc">Secure, role-based enterprise chatbot using LLMs and hybrid retrieval to ensure department-specific access and prevent data leaks.</p>
-        <div class="project-tags">
-          <span class="tag">RAG</span><span class="tag">LLM</span><span class="tag">FastAPI</span>
+          <span class="tag">RAG</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">LangSmith</span>
+          <span class="tag">Prometheus</span>
+          <span class="tag">Grafana</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/Shoaib-33/Finsolve-" target="_blank" class="project-link">⌥ GitHub</a>
@@ -484,89 +694,64 @@
         </div>
       </div>
 
-      <!-- BusGo -->
       <div class="project-card reveal">
         <div class="project-year">2025</div>
-        <div class="project-name">BusGo — AI Bus Ticket Booking</div>
-        <p class="project-desc">AI-powered bus ticket booking app with a natural language assistant for searching routes, booking tickets, and querying fares and policies. RAG pipeline using LangChain, ChromaDB, and Google Gemini, deployed via Docker with FastAPI and SQLite.</p>
+        <div class="project-name">BusGo — RAG-Based Bus Ticket Management</div>
+        <p class="project-desc">
+          AI-powered bus ticket booking system with a natural language assistant for route search, booking, and fare
+          queries. Built using a RAG pipeline with LangChain, ChromaDB, and Google Gemini, with FastAPI, SQLite,
+          and Docker for application flow and booking management.
+        </p>
         <div class="project-tags">
-          <span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">Gemini</span><span class="tag">FastAPI</span><span class="tag">Docker</span>
+          <span class="tag">RAG</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">Gemini</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Docker</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/Shoaib-33/BusGo" target="_blank" class="project-link">⌥ GitHub</a>
           <a href="https://www.loom.com/share/986076c39f7d46b396593969bbc1cc46" target="_blank" class="project-link">▶ Demo</a>
-          <a href="https://huggingface.co/spaces/Shoaib-33/Bus-ticket-booking-application" target="_blank" class="project-link">🤗 HuggingFace</a>
+          <a href="https://huggingface.co/spaces/Shoaib-33/Bus-ticket-booking-application" target="_blank" class="project-link">🤗 Hugging Face</a>
         </div>
       </div>
 
-      <!-- Bangla History Chatbot -->
       <div class="project-card reveal">
         <div class="project-year">2025</div>
-        <div class="project-name">Bangla History Chatbot</div>
-        <p class="project-desc">RAG-based chatbot to retrieve and present authentic accounts of Bangladeshi history with accurate sourcing.</p>
+        <div class="project-name">NeuroScan — Deep Learning Based Brain Tumor Classification</div>
+        <p class="project-desc">
+          End-to-end MRI brain tumor classification pipeline starting from a custom CNN baseline and progressively
+          improving performance using transfer learning with MobileNetV2 and EfficientNet. Includes Optuna-based
+          hyperparameter tuning, MLflow + DagsHub experiment tracking, Grad-CAM explainability, and ONNX INT8 optimization.
+        </p>
         <div class="project-tags">
-          <span class="tag">RAG</span><span class="tag">NLP</span><span class="tag">LangChain</span>
+          <span class="tag">TensorFlow</span>
+          <span class="tag">Optuna</span>
+          <span class="tag">MLflow</span>
+          <span class="tag">ONNX</span>
+          <span class="tag">Grad-CAM</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/Shoaib-33/Bangla-History-Chatbot" target="_blank" class="project-link">⌥ GitHub</a>
-          <span class="project-link-placeholder">▶ Demo — coming soon</span>
+          <a href="https://github.com/Shoaib-33/NeuroScan-" target="_blank" class="project-link">⌥ GitHub</a>
+          <a href="https://huggingface.co/spaces/Shoaib-33/NeuroScan" target="_blank" class="project-link">🤗 Hugging Face</a>
         </div>
       </div>
 
-      <!-- E-Commerce Support Automation -->
       <div class="project-card reveal">
         <div class="project-year">2025</div>
-        <div class="project-name">E-Commerce Support Automation</div>
-        <p class="project-desc">Automated customer support system for an e-commerce Facebook page using n8n workflow automation.</p>
+        <div class="project-name">Automated HR Management System</div>
+        <p class="project-desc">
+          Automated HR management system using MCP to streamline LLM-driven interactions with organizational tools,
+          helping simplify internal workflows and task execution through AI-assisted orchestration.
+        </p>
         <div class="project-tags">
-          <span class="tag">n8n</span><span class="tag">Automation</span><span class="tag">LLM</span>
+          <span class="tag">MCP</span>
+          <span class="tag">LLM</span>
+          <span class="tag">Automation</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/Shoaib-33/E-Commerce-Customer-Support-Automation" target="_blank" class="project-link">⌥ GitHub</a>
-          <span class="project-link-placeholder">▶ Demo — coming soon</span>
-        </div>
-      </div>
-
-      <!-- Fighter Jet Recognizer -->
-      <div class="project-card reveal">
-        <div class="project-year">2023</div>
-        <div class="project-name">Fighter Jet Recognizer</div>
-        <p class="project-desc">Computer vision-based fighter jet image recognizer with a fine-tuned model for accurate classification of 26 jet types.</p>
-        <div class="project-tags">
-          <span class="tag">CV</span><span class="tag">PyTorch</span><span class="tag">Fine-tuning</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Shoaib-33/Fighter-Jet-Recognizer" target="_blank" class="project-link">⌥ GitHub</a>
-          <span class="project-link-placeholder">▶ Demo — coming soon</span>
-        </div>
-      </div>
-
-      <!-- Dhaka House Rent Analysis -->
-      <div class="project-card reveal">
-        <div class="project-year">2023</div>
-        <div class="project-name">Dhaka House Rent Analysis</div>
-        <p class="project-desc">Data analytics project cross-comparing house rent across various areas of Dhaka city with visual insights.</p>
-        <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">Tableau</span><span class="tag">Pandas</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Shoaib-33/Dhaka-City-Rent-Analysis" target="_blank" class="project-link">⌥ GitHub</a>
-          <span class="project-link-placeholder">▶ Demo — coming soon</span>
-        </div>
-      </div>
-
-
-      <!-- ISMS -->
-      <div class="project-card reveal">
-        <div class="project-year">2021</div>
-        <div class="project-name">ISMS — IUT Student Management</div>
-        <p class="project-desc">Student management system with Django backend and MySQL, featuring full management for students, teachers, and staff.</p>
-        <div class="project-tags">
-          <span class="tag">Django</span><span class="tag">MySQL</span><span class="tag">Python</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Shoaib-33/ISMS_" target="_blank" class="project-link">⌥ GitHub</a>
-          <span class="project-link-placeholder">▶ Demo — coming soon</span>
+          <a href="https://github.com/Shoaib-33/Automated-HR-Management-System?tab=readme-ov-file" target="_blank" class="project-link">⌥ GitHub</a>
+          <a href="https://www.youtube.com/watch?v=noxaUF9vBgU" target="_blank" class="project-link">▶ Demo</a>
         </div>
       </div>
 
@@ -574,7 +759,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <div class="section-header reveal">
@@ -582,73 +766,74 @@
       <h2 class="section-title">Skills</h2>
       <div class="section-line"></div>
     </div>
+
     <div class="skills-grid">
       <div class="skill-group reveal">
         <div class="skill-group-title">Languages</div>
         <div class="skill-pills">
           <span class="skill-pill">Python</span>
-          <span class="skill-pill">C++</span>
-          <span class="skill-pill">Java</span>
           <span class="skill-pill">C</span>
-          <span class="skill-pill">Assembly</span>
+          <span class="skill-pill">C++</span>
         </div>
       </div>
+
       <div class="skill-group reveal">
-        <div class="skill-group-title">ML / Deep Learning</div>
+        <div class="skill-group-title">LLM & AI Systems</div>
+        <div class="skill-pills">
+          <span class="skill-pill">LangChain</span>
+          <span class="skill-pill">LangGraph</span>
+          <span class="skill-pill">Agentic AI</span>
+          <span class="skill-pill">RAG</span>
+          <span class="skill-pill">Tool-Calling Agents</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Databases</div>
+        <div class="skill-pills">
+          <span class="skill-pill">MySQL</span>
+          <span class="skill-pill">SQL</span>
+          <span class="skill-pill">Oracle</span>
+          <span class="skill-pill">Vector Databases</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Deep Learning & NLP</div>
         <div class="skill-pills">
           <span class="skill-pill">PyTorch</span>
           <span class="skill-pill">TensorFlow</span>
           <span class="skill-pill">Keras</span>
           <span class="skill-pill">Scikit-learn</span>
-          <span class="skill-pill">NumPy</span>
-          <span class="skill-pill">Pandas</span>
+          <span class="skill-pill">Transformers</span>
+          <span class="skill-pill">Fine-Tuning</span>
+          <span class="skill-pill">Transfer Learning</span>
         </div>
       </div>
+
       <div class="skill-group reveal">
-        <div class="skill-group-title">LLM & AI</div>
+        <div class="skill-group-title">Backend & Tools</div>
         <div class="skill-pills">
-          <span class="skill-pill">LangChain</span>
-          <span class="skill-pill">LangGraph</span>
-          <span class="skill-pill">RAG</span>
-          <span class="skill-pill">Multi-Agent</span>
-          <span class="skill-pill">Prompt Eng.</span>
-          <span class="skill-pill">MCP</span>
+          <span class="skill-pill">FastAPI</span>
+          <span class="skill-pill">Docker</span>
+          <span class="skill-pill">SQLite</span>
+          <span class="skill-pill">Jinja2</span>
+          <span class="skill-pill">MLflow</span>
+          <span class="skill-pill">ONNX</span>
         </div>
       </div>
-      <div class="skill-group reveal">
-        <div class="skill-group-title">Database</div>
-        <div class="skill-pills">
-          <span class="skill-pill">MySQL</span>
-          <span class="skill-pill">PostgreSQL</span>
-          <span class="skill-pill">Oracle</span>
-          <span class="skill-pill">PL/SQL</span>
-          <span class="skill-pill">Qdrant</span>
-        </div>
-      </div>
+
       <div class="skill-group reveal">
         <div class="skill-group-title">Web Scraping</div>
         <div class="skill-pills">
           <span class="skill-pill">Selenium</span>
           <span class="skill-pill">BeautifulSoup</span>
-          <span class="skill-pill">REST APIs</span>
-        </div>
-      </div>
-      <div class="skill-group reveal">
-        <div class="skill-group-title">Tools & Platforms</div>
-        <div class="skill-pills">
-          <span class="skill-pill">Git</span>
-          <span class="skill-pill">Linux</span>
-          <span class="skill-pill">Docker</span>
-          <span class="skill-pill">Figma</span>
-          <span class="skill-pill">Tableau</span>
-          <span class="skill-pill">n8n</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education">
   <div class="container">
     <div class="section-header reveal">
@@ -656,10 +841,11 @@
       <h2 class="section-title">Education</h2>
       <div class="section-line"></div>
     </div>
+
     <div class="edu-grid">
       <div class="edu-card reveal">
         <div>
-          <div class="edu-degree">B.Sc. in Computer Science & Engineering</div>
+          <div class="edu-degree">Bachelor in Computer Science & Engineering</div>
           <div class="edu-school">Islamic University of Technology — Gazipur, Bangladesh</div>
         </div>
         <div class="edu-right">
@@ -667,20 +853,22 @@
           <div class="edu-gpa">CGPA: 3.48</div>
         </div>
       </div>
+
       <div class="edu-card reveal">
         <div>
-          <div class="edu-degree">Higher Secondary Certificate (HSC)</div>
-          <div class="edu-school">The Millennium Stars School and College — Rangpur</div>
+          <div class="edu-degree">Higher Secondary School Certificate (HSC)</div>
+          <div class="edu-school">The Millennium Stars School and College — Rangpur, Bangladesh</div>
         </div>
         <div class="edu-right">
           <div class="edu-year">2019</div>
           <div class="edu-gpa">GPA: 5.00</div>
         </div>
       </div>
+
       <div class="edu-card reveal">
         <div>
           <div class="edu-degree">Secondary School Certificate (SSC)</div>
-          <div class="edu-school">The Millennium Stars School and College — Rangpur</div>
+          <div class="edu-school">The Millennium Stars School and College — Rangpur, Bangladesh</div>
         </div>
         <div class="edu-right">
           <div class="edu-year">2017</div>
@@ -691,30 +879,35 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="contact-inner">
       <div class="contact-text reveal">
         <h2>Let's Build<br><span style="color:var(--accent)">Something</span><br>Together.</h2>
-        <p style="margin-top:1rem">Open to AI engineering roles, collaborations, and interesting problems. Drop a message anytime.</p>
+        <p style="margin-top:1rem">
+          Open to AI engineering roles, research collaborations, and meaningful real-world AI problems.
+        </p>
       </div>
+
       <div class="contact-links reveal">
         <a href="mailto:shoaib.shahriar01@gmail.com" class="contact-link">
           <span class="contact-icon">✉</span>
           <span>shoaib.shahriar01@gmail.com</span>
         </a>
+
         <a href="https://github.com/Shoaib-33" target="_blank" class="contact-link">
           <span class="contact-icon">⌥</span>
           <span>github.com/Shoaib-33</span>
         </a>
-        <a href="https://shorturl.at/NlssG" target="_blank" class="contact-link">
+
+        <a href="https://shorturl.at/NIssG" target="_blank" class="contact-link">
           <span class="contact-icon">↗</span>
           <span>LinkedIn Profile</span>
         </a>
+
         <a href="tel:+8801309183295" class="contact-link">
           <span class="contact-icon">✆</span>
-          <span>+880 1309 183295</span>
+          <span>+8801309183295</span>
         </a>
       </div>
     </div>
@@ -722,17 +915,18 @@
 </section>
 
 <footer>
-  <p>Designed & Built by Md Shoaib Shahriar Ibrahim · 2025</p>
+  <p>Designed & Built by Md Shoaib Shahriar Ibrahim · 2026</p>
 </footer>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
+    entries.forEach((e) => {
       if (e.isIntersecting) e.target.classList.add('visible');
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 </script>
+
 </body>
 </html>
